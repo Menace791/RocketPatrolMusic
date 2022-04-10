@@ -11,6 +11,9 @@ class Play extends Phaser.Scene {
     }
 
     create() {
+        this.playSong = this.sound.add('play_song');
+        this.playSong.play();
+        this.playSong.loop = true;
 
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
@@ -67,9 +70,11 @@ class Play extends Phaser.Scene {
     update() {
 
         if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
+            this.playSong.stop();
             this.scene.restart();
         }
         if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            this.playSong.stop();
             this.scene.start('menu');
         }
 

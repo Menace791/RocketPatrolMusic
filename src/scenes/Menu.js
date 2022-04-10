@@ -4,12 +4,18 @@ class Menu extends Phaser.Scene {
     }
 
     preload() {
+        this.load.audio('menu_song', 'assets/MenuSong.wav');
+        this.load.audio('play_song', 'assets/PlaySong.wav');
         this.load.audio('sfx_select', 'assets/Select.wav');
         this.load.audio('sfx_explosion', 'assets/Explosion.wav');
         this.load.audio('sfx_rocket', 'assets/RocketShoot.wav');
     }
 
     create() {
+        this.menuSong = this.sound.add('menu_song');
+        this.menuSong.play();
+        this.menuSong.loop = true;
+
         let menuConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
@@ -34,11 +40,12 @@ class Menu extends Phaser.Scene {
     }
 
     update() {
-        if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+        if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             game.settings = {
                 spaceshipSpeed: 3,
                 gameTimer: 60000
             }
+            his.menuSong.stop();
             this.sound.play('sfx_select');
             this.scene.start('play');
         }
@@ -48,8 +55,10 @@ class Menu extends Phaser.Scene {
                 spaceshipSpeed: 4,
                 gameTimer: 45000
             }
+            this.menuSong.stop();
             this.sound.play('sfx_select');
             this.scene.start('play');
         }
     }
+
 }
