@@ -5,7 +5,7 @@ class Play extends Phaser.Scene {
 
     preload() {
         this.load.image('starfield', 'assets/starfield.png');
-        this.load.image('rocket', 'assets/rocket.png');
+        this.load.image('rocket', 'assets/note.png');
         this.load.image('ship', 'assets/ship.png');
         this.load.spritesheet('explosion', 'assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
     }
@@ -22,7 +22,7 @@ class Play extends Phaser.Scene {
 
         this.starfield = this.add.tileSprite(0, 0, game.config.width, game.config.height, 'starfield').setOrigin(0,0);
 
-        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5,0);
+        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5,0.5);
 
         this.shipA = new Ship(this, game.config.width + borderUISize*6, borderUISize*4, 'ship', 0, 30).setOrigin(0,0);
         this.shipB = new Ship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'ship', 0, 20).setOrigin(0,0);
