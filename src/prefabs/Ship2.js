@@ -1,4 +1,4 @@
-class Ship extends Phaser.GameObjects.Sprite {
+class Ship2 extends Phaser.GameObjects.Sprite {
 
     constructor(scene, x, y, texture, frame, pointValue) {
         super(scene, x, y, texture, frame);
@@ -7,7 +7,7 @@ class Ship extends Phaser.GameObjects.Sprite {
     }
 
     update() {
-        this.x -= game.settings.spaceshipSpeed;
+        this.x -= game.settings.spaceshipSpeed * 1.5;
 
         if (this.x <= 0 - this.width) {
             this.reset();
