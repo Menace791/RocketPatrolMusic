@@ -1,7 +1,7 @@
 // Name: Manas Sara
 // Project Title: Musical Score (Rocket Patrol Mod)
 // Date: April 20, 2022
-// Time Taken: Around 12 Hours
+// Time Taken: Around 10 to 12 Hours
 
 // Points Breakdown
 // 60 - Redesign Aesthetic
